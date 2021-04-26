@@ -1,0 +1,53 @@
+<app-menu></app-menu>
+<div class="container col-lg-6">
+    <h1 class="text-center">Acesso Cadastro de Pessoas</h1>
+    <div class="card">
+      <div class="card-body">
+        <form class="form-group">
+          <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+          <div class="alert alert-success" *ngIf='loginSuccess'>{{successMessage}}</div>
+          <div class="form-group">
+            <label for="email">Usuário :</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="Informe usuário"
+              name="username">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Senha:</label>
+            <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Informe senha"
+              name="password">
+          </div>
+          <button (click)=handleLogin() class="btn btn-success">Entrar</button>
+        </form>
+      </div>
+    </div>
+    <br/>
+    <div class="card">
+      <div class="card-body">
+        <h5>Usuário: admin</h5>
+        <h5>Senha: 123456</h5>
+      </div>
+      </div>
+      <br/>
+      <div class="card">
+      <div class="card-body">
+
+        <h5>Resource Link para projeto no github:</h5>
+        <a href="{{baseUrl}}/api/v1/github" target="_blank">{{baseUrl}}/api/v1/github</a>
+
+        <h5>Documentação da API:</h5>
+        <a href="{{baseUrl}}/swagger-ui.html" target="_blank">{{baseUrl}}/swagger-ui.html</a>
+
+        <h5>Docker hub:</h5>
+        <a href="https://hub.docker.com/repository/docker/lyndontavares/desafio-backend" target="_blank">https://hub.docker.com/repository/docker/lyndontavares/desafio-backend</a>
+        <a href="https://hub.docker.com/repository/docker/lyndontavares/desafio-frontend"target="_blank">https://hub.docker.com/repository/docker/lyndontavares/desafio-frontend</a>
+
+        <h5>Sources:</h5>
+        <a href="https://github.com/lyndontavares/desafio-fullstack" target="_blank">https://github.com/lyndontavares/desafio-fullstack</a>
+
+        <h5>Desafio:</h5>
+        <a href="https://github.com/softplan/softplayer-java-apply" target="_blank">https://github.com/softplan/softplayer-java-apply</a>
+
+      </div>
+      </div>
+
+  </div>

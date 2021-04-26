@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+
+<div class="container col-lg-12">
+    <h1 class="text-center">Consultar Pessoa</h1>
+    <div class="card">
+        <div class="card-body">
+
+    <div *ngIf="employee">
+    <div>
+      <label><b>ID: </b></label> {{employee.id}}
+    </div>
+    <div>
+      <label><b>Nome: </b></label> {{employee.nome}}
+    </div>
+    <div>
+      <label><b>Sexo: </b></label> {{employee.sexo}}
+    </div>
+    <div>
+      <label><b>Dt.Nascimento: </b></label> {{employee.nascimento}}
+    </div>
+    <div>
+      <label><b>CPF: </b></label> {{employee.cpf}}
+    </div>
+    <div>
+      <label><b>Naturalidade: </b></label> {{employee.naturalidade}}
+    </div>
+    <div>
+      <label><b>Nacionalidade: </b></label> {{employee.nacionalidade}}
+    </div>
+     <div>
+      <label><b>Data Criação: </b></label> {{employee.dataCriacao}}
+    </div>
+    <div>
+      <label><b>Data Atualização: </b></label> {{employee.dataAtualizacao}}
+    </div>
+
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>
+
+</div>
+
+</div>

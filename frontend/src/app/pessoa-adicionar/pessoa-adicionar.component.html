@@ -1,0 +1,73 @@
+<app-menu></app-menu>
+
+<div class="container col-lg-12">
+    <h1 class="text-center">Adicionar Pessoa</h1>
+    <div class="card">
+        <div class="card-body">
+
+            <div [hidden]="submitted"   >
+
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                      <div style="color:red; cursor: pointer;" *ngIf="errorMessage.length>0" (click)="errorMessage=[];">limpar erros</div>
+                      <div *ngIf="errorMessage.length>0" class="alert alert-danger"  >
+                        <ul *ngFor="let e of errorMessage ">
+                          <li>{{e}}</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                   <div class="form-group">
+                    <label for="name">Nome *</label>
+                    <input type="text" class="form-control touppercase" id="firstName" required [(ngModel)]="pessoa.nome" name="nome">
+                   </div>
+
+                  <div class="form-group">
+                    <label for="name">Sexo</label>
+                    <input type="text" class="form-control touppercase" id="lastName" required [(ngModel)]="pessoa.sexo" name="sexo">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Email</label>
+                    <input type="text" class="form-control" id="emailId" required [(ngModel)]="pessoa.email" name="email">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Dt.Nascimento *</label>
+                    <input type="text" class="form-control" id="emailId" mask="d0/M0/0000" required [(ngModel)]="pessoa.nascimento" name="nascimento">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">CPF *</label>
+                    <input type="text" class="form-control" id="emailId"  mask="000.000.000-00" required [(ngModel)]="pessoa.cpf" name="cpf">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Naturalidade</label>
+                    <input type="text" class="form-control touppercase" id="emailId" required [(ngModel)]="pessoa.naturalidade" name="naturalidade">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Nacionalidade</label>
+                    <input type="text" class="form-control touppercase" id="emailId" required [(ngModel)]="pessoa.nacionalidade" name="nacionalidade">
+                  </div>
+
+                  <button type="submit" class="btn btn-success">Gravar</button>
+                  <button class="btn btn-primary" (click)="voltar()">Cancelar</button>
+
+                </form>
+            </div>
+
+            <div [hidden]="!submitted">
+                <h4>
+                    {{pessoa.nome}}, Adicionado com sucesso!
+                </h4>
+
+                <button class="btn btn-success"    (click)="newEmployee()" >  Adicionar +1 pessoa</button>
+                <button  class="btn btn-primary"  (click)="voltar()"> Listar Pessoas </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

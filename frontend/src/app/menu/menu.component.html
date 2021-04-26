@@ -1,0 +1,15 @@
+<header>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+        <div><a href="https://github.com/lyndontavares" class="navbar-brand">Desafio Softplan</a></div>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+
+            <li>
+                <a *ngIf="isLoggedIn" class="nav-link" routerLink="/add">Adicionar Pessoa</a>
+            </li>
+
+            <li>
+                <a *ngIf="isLoggedIn" class="nav-link" routerLink="/logout" (click)=handleLogout()>Sair</a>
+            </li>
+        </ul>
+    </nav>
+  </header>

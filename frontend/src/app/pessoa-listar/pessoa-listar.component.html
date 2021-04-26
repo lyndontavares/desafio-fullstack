@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+
+
+<div class="container col-lg-12">
+    <h1 class="text-center">Cadastro de Pessoas</h1>
+    <div class="card">
+      <div class="card-body">
+
+<div class="panel panel-primary">
+
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Sexo</th>
+          <th>Email</th>
+          <th>Dt.Nascimento</th>
+          <th>CPF</th>
+          <!-- <th>Naturalidade</th>
+          <th>Nacionalidade</th> -->
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of pessoas | async">
+          <td>{{p.id}}</td>
+          <td>{{p.nome}}</td>
+          <td>{{p.sexo}}</td>
+          <td>{{p.email}}</td>
+          <td>{{p.nascimento}}</td>
+          <td>{{p.cpf}}</td>
+          <!-- <td>{{p.naturalidade}}</td>
+          <td>{{p.nacionalidade}}</td> -->
+          <td><button (click)="openModal(template,p.id)" class="btn btn-danger">Remover</button>
+              <button (click)="onUpdate(p.id)" class="btn btn-info"  >Atualizar</button>
+              <button (click)="onDetails(p.id)" class="btn btn-info" >Detalhe</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Confirma Remover ID {{this.idToBeDeleted}} ?</p>
+    <button type="button" class="btn btn-default" (click)="doDelete()" >Sim</button>
+    <button type="button" class="btn btn-primary"  (click)="doClose()"  >Não</button>
+  </div>
+</ng-template>
