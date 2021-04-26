@@ -22,7 +22,7 @@ https://github.com/lyndontavares
 
 git clone https://github.com/lyndontavares/desafio-fullstack
 
-cd ./bachend
+cd ./backend
 mvn clean install -DskipTests=true
 cd ..
 
