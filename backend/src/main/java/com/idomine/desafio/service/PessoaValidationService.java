@@ -30,7 +30,17 @@ public class PessoaValidationService {
   
   public List<String> validar(Pessoa pessoa, boolean isNovoRegistro) {
 	  List<String> errors = new ArrayList<>();
-	  
+  
+	  try {
+		  doValidation(pessoa, isNovoRegistro, errors);
+	  } catch(Exception error) {
+		  errors.add("ERROR Inesperado - "+error.getMessage());
+	  }
+	  return errors;
+  }
+
+  private void doValidation(Pessoa pessoa, boolean isNovoRegistro, List<String> errors) {
+	
 	  //EXISTE
 	  if (!isNovoRegistro ) {
 		  if( !repoPessoa.findById(pessoa.getId()).isPresent() ) {
@@ -77,7 +87,5 @@ public class PessoaValidationService {
 			 }
 		  } 
 	  }
-	  	  	  
-	  return errors;
-  }
+}
 }
